@@ -3,20 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>{{ cabecalho }}</title>
+    <link rel="stylesheet" href="../static/bootstrap.css">
   </head>
   <body>
-    <h1>Crie seu Container!!</h1>
+    <h1>Make your Container!!</h1>
     <form>
   <fieldset>
-    <legend>Escolha seu serviço</legend>
+    <legend>Service</legend>
+    {% for servico in servicos %}
     <p>
       <input type="radio" name="size" id="size_1" value="small">
-      <label for="size_1">Postgres</label>
+      <label for="size_1">{{ servico }}</label>
+        <select id=cbPais>
+          <option value="latest" >latest</option>
+          <option value="usa" >Usa</option>
+        </select>
     </p>
-    <p>
-      <input type="radio" name="size" id="size_2" value="medium">
-      <label for="size_2">Nginx</label>
-    </p>
+    {% endfor %}
+
    </fieldset>
 </form>
 
